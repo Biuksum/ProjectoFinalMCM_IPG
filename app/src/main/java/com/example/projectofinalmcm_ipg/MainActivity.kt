@@ -2,6 +2,7 @@ package com.example.projectofinalmcm_ipg
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectofinalmcm_ipg.databinding.ActivityMainBinding
 import retrofit2.Call
@@ -36,7 +37,8 @@ class MainActivity : AppCompatActivity() {
                     val responseBody = response.body()!!
                     data = responseBody.products
 
-
+                    var adapter = ProductAdapter(data)
+                    binding.recyclerview.adapter = adapter
 
                 }
                 catch (ex: java.lang.Exception){
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e("Failed","API Failed"+ t.message)
             }
 
         })
