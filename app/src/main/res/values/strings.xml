@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ProjectoFinalMCM_IPG</string>
+    <string name="categoria">categoria</string>
+    <string name="preco">preco</string>
+    <string name="precos">Preco</string>
+    <string name="price">Price</string>
+    <string name="stocks" />
 </resources>

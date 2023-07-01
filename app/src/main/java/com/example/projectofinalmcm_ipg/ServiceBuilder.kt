@@ -13,7 +13,7 @@ object ServiceBuilder {
         .client(client)
         .build()
 
-    //let's create an instance of this object
+    //criar uma instância deste objeto
     fun<T> buildService(service:Class<T>):T{
         return retrofit.create(service)
     }

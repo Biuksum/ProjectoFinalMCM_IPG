@@ -8,7 +8,6 @@ import com.example.projectofinalmcm_ipg.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         retrofit.getAllProducts().enqueue(object : Callback<ApiResponse>{
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                 try {
-                    // to avoid nulPointerException
+                    //
+                    //para envitar nulPointerException
                     val responseBody = response.body()!!
                     data = responseBody.products
 
